@@ -1,0 +1,27 @@
+ body
+        {
+          padding: 0;
+          margin: 0;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+        }
+        .mainheader
+        {   margin-top: 20px;
+            
+            background-color: rgb(59, 154, 218);
+            height: 3.5rem;
+            width: 100%;
+            padding:  2rem 2rem 3rem 2rem;
+        }
+        .midheader
+        {
+            list-style: none;
+            margin: 0 4rem;
+            padding: 0;
+            display: flex;
+        }
+        .midheader-item
+        {
+            margin: 0 1rem;
+        }
+  
