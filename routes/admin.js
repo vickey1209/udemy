@@ -33,7 +33,7 @@ router.post('/addproduct ', (req, res) => {
   products.push({title: req.body.title}); 
 console.log(req.body);
 // res.render("/");
-res.redirect('/');
+res.redirect('./views/shop');
 });
 
 
@@ -43,3 +43,4 @@ res.redirect('/');
  exports.products = products;
 
 
+      

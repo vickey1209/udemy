@@ -10,11 +10,11 @@ const router = express.Router();
 router.get('/',(req, res) => {
     console.log (admindata.products)
   console.log(req.body);
-  console.log ('dds')
-    res.sendFile(path.join(rootdir,'views','shop.html'));
+ 
+    // res.sendFile(path.join(rootdir,'views','index'));
     // res.sendFile('shop.html');
-    // res.sendFile('../views/shop.html');
-    // res.sendFile(path.join(rootdir,'views','addproduct.html'));
+    // res.sendFile('../views/addproduct.html');
+    res.sendFile(path.join(rootdir,'views','shop.html'));
   // res.render('shop.html');
   });
  

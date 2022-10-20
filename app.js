@@ -6,10 +6,11 @@ const express = require ('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const admindata = require('./routes/admin')
+const ejs = require('ejs')
 const shoproutes = require('./routes/shop')
 const app = express();
 const routedir = require("./util/path.js")
-app.set("view engine", "html");
+app.set("view engine", "ejs");
 
 
 app.use(bodyParser.urlencoded( {extended : true}));
@@ -18,6 +19,7 @@ app.use(bodyParser.urlencoded( {extended : true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.static(path.join(__dirname,'views')));
+app.use(express.static(path.join(__dirname,'routes')));
 
          // use of next() are as follows 
 
@@ -79,12 +81,12 @@ app.use(express.static(path.join(__dirname,'views')));
         //   app.get('/', [cb0, cb1, cb2])
 
         app.use('/admin',  admindata.routes);
-        app.use( shoproutes);
+        app.use(shoproutes);
 
      
-app.use ((req, res, next) => {
-    res.status(404).sendFile(path.join(routedir, 'views','404.html'));
-});
+// app.use ((req, res, next) => {
+//     res.status(404).sendFile(path.join(routedir, 'views','404.html'));
+// });
 
     // console.log(route.sometext);
 
