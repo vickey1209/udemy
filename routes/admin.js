@@ -20,18 +20,18 @@ const products = [];
 
   //get request
   // /admin/addproduct => GET
-router.get('/addproduct',(req, res) => {
+router.get('/addproduct',(req, res, next) => {
  
-       
+        console.log(req.body)
   res.sendFile(path.join(rootdir,'views','addproduct.html'));
 });
 
 //post request
 // /admin/addproduct => POST
 
-router.post('/addproduct ', (req, res) => {
-  products.push({title: req.body.title}); 
-console.log(req.body);
+router.post('/addproduct ', (req, res, next) => {
+  // products.push({title: req.body.title}); 
+console.log(req.body.title);
 // res.render("/");
 res.redirect('./views/shop');
 });
